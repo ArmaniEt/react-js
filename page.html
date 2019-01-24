@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div id="root">
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script type="text/babel">
+        function Header(props) {
+            return (
+                <li className="nav_list_item"><a className="nav_list_link" href="#">{props.link}</a></li>
+            );
+
+        }
+
+         function Content(props) {
+            return (
+                <div className='movie_card'>
+                    <h3 className="movie_title">Movie: {props.title}</h3>
+                    <hr/>
+                    <p>Release date: {props.year}</p>
+                    <img className="movie_poster-centred" src={props.src} width="150px"/>
+                </div>
+
+            );
+        }
+
+        function Sidebar(props) {
+            return(
+                <li className="sidebar_items"><a className="sidebar_links" href="#">{props.sideBarLinks}</a></li>
+
+            );
+
+        }
+
+        function Footer(props) {
+            return (
+                <p className="footer_text">{props.copyright} {props.donation}</p>
+
+            );
+
+        }
+        const root = document.getElementById('root');
+        ReactDOM.render(
+            <div>
+                <header>
+                    <div className="header">
+                        <ul className="nav_list">
+                            <Header link="Interviews"/>
+                            <Header link="Tutorials"/>
+                            <Header link="Tips and Tricks"/>
+                            <Header link="Inspiration"/>
+                            <Header link="Archive"/>
+                        </ul>
+                        <img className="logo_img" width="100px" src="img/header_logo.jpg" alt="logo"/>
+                    </div>
+                </header>
+                <section>
+                    <div id="container">
+                        <div className="content ">
+                            <Content title = "Roma" year="2018" src="img/220px-Roma_theatrical_poster.png"/>
+                            <Content title = "Venom" year="2018" src="img/venom.jpg"/>
+                            <Content title = "Roma" year="2018" src="img/220px-Roma_theatrical_poster.png"/>
+                            <Content title = "Lock Stock and Two Smoking Barrels" year="1990" src="img/lock_stock_two_smoking_barrels.jpg"/>
+                        </div>
+                        <aside className="clearfix">
+                            <div className="sidebar">
+                                <Sidebar sideBarLinks="New Films"/>
+                                <Sidebar sideBarLinks="Old Films"/>
+                                <Sidebar sideBarLinks="In English"/>
+                                <Sidebar sideBarLinks="In Spanish"/>
+                                <Sidebar sideBarLinks="Awards"/>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <footer>
+                    <div className="footer">
+                        <Footer copyright="Copyright 2019"/>
+                        <Footer donation="Donation: 2112-2341-1222-3111"/>
+                    </div>
+                </footer>
+
+            </div>, root);
+    </script>
+</body>
+</html>

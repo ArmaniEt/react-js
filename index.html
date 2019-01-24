@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+</head>
+<style>
+    .movie_card {
+        display: inline-block;
+        margin: 20px;
+        border: 1px solid #eee;
+        box-shadow: 0 2px 2px #ccc;
+        width: 300px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: lightblue;
+        vertical-align: top;
+    }
+
+    #container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .movie_title {
+        text-align: center;
+        font-style: italic;
+
+    }
+
+    .movie_poster-centred {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .movie_cards-centered {
+        text-align: center;
+
+    }
+</style>
+<body>
+    <div id= "container">
+    </div>
+
+    <script type="text/babel">
+        function Poster (props) {
+            return (
+                <div className='movie_card'>
+                    <h3 className="movie_title">Movie: {props.name}</h3>
+                    <hr/>
+                    <p>Release date: {props.year}</p>
+                    <img className="movie_poster-centred" src={props.src} width="150px"/>
+                </div>
+            );
+        }
+        const container = document.getElementById("container");
+        ReactDOM.render(<div className="movie_cards-centered">
+                <Poster name="Roma" year="2018" src="img/220px-Roma_theatrical_poster.png"/>
+                <Poster name="Venom" year="2018" src="img/venom.jpg"/>
+                <Poster name="Lock Stock and Two Smoking Barrels" year="1998" src="img/lock_stock_two_smoking_barrels.jpg"/>
+            </div>, container);
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+.header {
+    background: black;
+    border-radius: 15px;
+}
+
+.nav_list_item {
+    display: inline-block;
+    list-style: none;
+    padding: 15px 15px;
+}
+
+.nav_list_link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav_list_link:hover {
+    text-decoration: underline;
+}
+
+.logo_img {
+    float: right;
+    margin: 5px 30px;
+}
+
+.nav_list {
+    width: 50%;
+    display: inline-block;
+}
+
+#container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+}
+
+.movie_card {
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 2px #ccc;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: lightblue;
+    vertical-align: top;
+}
+
+.movie_title {
+     text-align: center;
+    font-style: italic;
+
+}
+
+.movie_poster-centred {
+    margin: 0 auto;
+    display: block;
+}
+
+.sidebar {
+    background: black;
+    height: 100vh;
+    overflow-y: hidden;
+    float: right;
+    width: 15%;
+    margin-top: 10px;
+}
+
+
+.sidebar_items {
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.sidebar_links {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar_links:hover {
+    text-decoration: underline;
+}
+
+.content_text {
+    width: 40%;
+    display: inline-block;
+}
+
+.content {
+    float: left;
+    height: 100%;
+    width: 85%;
+}
+
+.footer {
+    background: black;
+    height: 70px;
+    border-radius: 15px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.footer_text {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+}
